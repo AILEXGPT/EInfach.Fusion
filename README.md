@@ -4,18 +4,18 @@
 </a>
 
 <p align="center">
-  A feature-rich, highly customizable AI Web App Template, empowered by Next.js.
+  Eine funktionsreiche, hochgradig anpassbare KI-Web-App-Vorlage, ermöglicht durch Next.js.
 </p>
 
 <p align="center">
-  <a href="#tech-stacks"><strong>Tech stacks</strong></a> ·
-  <a href="#nstallation"><strong>Installation</strong></a> ·
-  <a href="#run-locally"><strong>Run Locally</strong></a> ·
-  <a href="#authors"><strong>Authors</strong></a>
+  <a href="#tech-stacks"><strong>Technologiestapel</strong></a> ·
+  <a href="#installation"><strong>Installation</strong></a> ·
+  <a href="#lokal-ausführen"><strong>Lokal Ausführen</strong></a> ·
+  <a href="#autoren"><strong>Autoren</strong></a>
 </p>
 <br/>
 
-## Tech stacks
+## Technologiestapel
  - [Typescript](https://www.typescriptlang.org/)
  - [ReactJS](https://reactjs.org/)
  - [NextJS](https://nextjs.org/)
@@ -26,80 +26,75 @@
  - [Shadcn UI](https://ui.shadcn.com/)
  - [Next.js AI Chatbot](https://github.com/vercel-labs/ai-chatbot)
 
-  
 ## Installation
 
-1. Clone the repo
+1. Klone das Repository
    ```sh
-   git clone https://github.com/nphivu414/ai-fusion-kit
+   git clone https://github.com/einfachalf/einfach.fusion.git
    ```
-2. Install dependencies
+
+2. Installiere Abhängigkeiten
    ```sh
    yarn install
    ```
-3. Setup your supabase project
-   - You'll first need a Supabase project which can be made via the [Supabase dashboard](https://database.new/)
-   - Run the following snippet in your project's [SQL Editor](https://supabase.com/dashboard/project/_/sql/new)
-      ```sql
-        create table profiles (
-          id uuid default uuid_generate_v4() primary key,
-          updated_at timestamp default now(),
-          username text,
-          full_name text,
-          avatar_url text,
-          website text
-        );
 
-        create table apps (
-          id uuid default uuid_generate_v4() primary key,
-          name text not null,
-          description text,
-          createdAt timestamp default now(),
-          updatedAt timestamp default now(),
-          slug text not null,
-          logoUrl text
-        );
+3. Richte dein Supabase-Projekt ein
+   - Zuerst benötigst du ein Supabase-Projekt, das über das [Supabase-Dashboard](https://database.new/) erstellt werden kann
+   - Führe den folgenden Snippet in deinem Projekt [SQL Editor](https://supabase.com/dashboard/project/_/sql/new) aus
+     ```sql
+     create table profiles (
+       id uuid default uuid_generate_v4() primary key,
+       updated_at timestamp default now(),
+       username text,
+       full_name text,
+       avatar_url text,
+       website text
+     );
 
-        create table chats (
-          id uuid default uuid_generate_v4() primary key,
-          name text,
-          createdAt timestamp default now(),
-          updatedAt timestamp default now(),
-          profileId uuid references profiles (id),
-          appId uuid references apps (id),
-          settings json
-        );
+     create table apps (
+       id uuid default uuid_generate_v4() primary key,
+       name text not null,
+       description text,
+       createdAt timestamp default now(),
+       updatedAt timestamp default now(),
+       slug text not null,
+       logoUrl text
+     );
 
-        create table messages (
-          id uuid default uuid_generate_v4() primary key,
-          role public.message_role,
-          content text,
-          createdAt timestamp default now(),
-          updatedAt timestamp default now(),
-          profileId uuid references profiles (id),
-          chatId uuid references chats (id)
-        );
-      ```
+     create table chats (
+       id uuid default uuid_generate_v4() primary key,
+       name text,
+       createdAt timestamp default now(),
+       updatedAt timestamp default now(),
+       profileId uuid references profiles (id),
+       appId uuid references apps (id),
+       settings json
+     );
 
-4. Get an account from OpenAI and generate your own API key
+     create table messages (
+       id uuid default uuid_generate_v4() primary key,
+       role public.message_role,
+       content text,
+       createdAt timestamp default now(),
+       updatedAt timestamp default now(),
+       profileId uuid references profiles (id),
+       chatId uuid references chats (id)
+     );
+     ```
 
-5. Rename `.env.example` to `.env.local` and populate with your values
-  > Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
-    
-## Run Locally
+4. Erstelle ein Konto bei OpenAI und generiere deinen eigenen API-Schlüssel
 
-1. Go to the project directory
+5. Benenne `.env.example` in `.env.local` um und fülle es mit deinen Werten aus
+   > Hinweis: Du solltest deine `.env`-Datei nicht committen, da sie Geheimnisse preisgibt, die anderen die Kontrolle über den Zugang zu deinen verschiedenen OpenAI- und Authentifizierungsanbieterkonten ermöglichen würden.
 
-```bash
-  cd ai-fusion-kit
-```
+## Lokal Ausführen
 
-2. Start the web app
+1. Gehe zum Projektverzeichnis
+   ```bash
+   cd ai-fusion-kit
+   ```
 
-```bash
-  yarn dev
-```
-
-## Authors
-- [@nphivu414](https://github.com/nphivu414)
-- [@toproad1407](https://github.com/toproad1407)
+2. Starte die Web-App
+   ```bash
+   yarn dev
+   ```
