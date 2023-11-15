@@ -1,5 +1,5 @@
 <a href="https://ai-fusion-kit.vercel.app/">
-  <img alt="AI Fusion Kit" src="https://ai-fusion-kit.vercel.app/_next/image?url=%2Fscreenshot.png&w=1920&q=75">
+  <img alt="AI Fusion Kit" src="https://einfachalex.net/wp-content/uploads/2023/11/68747470733a2f2f61692d667573696f6e2d6b69742e76657263656c2e6170702f5f6e6578742f696d6167653f75726c3d25324673637265656e73686f742e706e6726773d3139323026713d3735-Kopie.webp">
   <h1 align="center">AI Fusion Kit</h1>
 </a>
 
