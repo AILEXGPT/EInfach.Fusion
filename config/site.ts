@@ -3,11 +3,11 @@ import { env } from "@/env.mjs"
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "AI Fusion Kit",
+  name: "EinfachFusion",
   description: "A feature-rich, highly customizable AI Chatbot Template, empowered by Next.js.",
   links: {
-    x: "https://twitter.com/nphivu414",
-    github: "https://github.com/nphivu414/ai-fusion-kit",
+    x: "https://twitter.com/einfachalf",
+    github: "https://github.com/einfachalf",
     docs: "",
   },
 }
